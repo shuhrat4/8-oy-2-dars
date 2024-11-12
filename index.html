@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Todo</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-gradient-to-br from-gray-800 to-gray-900 text-gray-300">
+    <div class="flex items-center mx-auto p-6 rounded-xl flex-col shadow-2xl mt-[60px] bg-gray-800 w-[90%] max-w-[500px] border border-gray-700">
+        <h1 class="text-teal-400 text-3xl font-semibold mb-6">Your Todo List</h1>
+        
+        <form id="todo-form" autocomplete="off" class="add-form flex items-center justify-between w-full">
+            <input name="todo" id="todo-input" placeholder="Add a new task" required
+                   class="input-value text-[18px] bg-gray-700 text-gray-200 placeholder-gray-400 outline-none rounded-lg px-4 py-2 w-[78%] shadow-inner focus:ring-2 focus:ring-teal-400"
+                   type="text">
+            <button type="submit"
+                    class="bg-teal-500 text-gray-900 text-[18px] font-semibold py-2 w-[19%] rounded-lg shadow-lg duration-300 hover:bg-teal-400 active:bg-teal-600">
+                Add
+            </button>
+        </form>
+
+        <ul id="todo-list" class="list-todos h-[70vh] rounded-lg overflow-y-auto w-full mt-8 p-3 bg-gray-700 border border-gray-600 shadow-inner space-y-3">
+        </ul>
+    </div>
+
+
+    <script src="./main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
